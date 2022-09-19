@@ -1,12 +1,10 @@
 package io.horizontalsystems.bankwallet.modules.nft.asset
 
-import android.util.Log
 import io.horizontalsystems.bankwallet.core.providers.nft.INftProvider
 import io.horizontalsystems.bankwallet.entities.CurrencyValue
 import io.horizontalsystems.bankwallet.entities.nft.NftAssetMetadata
 import io.horizontalsystems.bankwallet.entities.nft.NftCollectionMetadata
 import io.horizontalsystems.bankwallet.entities.nft.NftUid
-import io.horizontalsystems.bankwallet.entities.nft.SaleType
 import io.horizontalsystems.bankwallet.modules.balance.BalanceXRateRepository
 import io.horizontalsystems.marketkit.models.CoinPrice
 import io.horizontalsystems.marketkit.models.NftPrice
@@ -34,7 +32,6 @@ class NftAssetService(
     suspend fun start() = withContext(Dispatchers.IO) {
         launch {
             xRateRepository.itemObservable.collect {
-                Log.e("AAA", "rates updated")
                 handleXRateUpdate(it)
             }
         }
@@ -193,7 +190,7 @@ class NftAssetService(
     )
 
     data class SaleItem(
-        val type: SaleType,
+        val type: NftAssetMetadata.SaleType,
         val listings: List<SaleListingItem>
     ) {
         val bestListing: SaleListingItem?

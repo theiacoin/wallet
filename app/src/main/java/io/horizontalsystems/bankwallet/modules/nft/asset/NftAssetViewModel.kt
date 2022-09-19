@@ -9,7 +9,11 @@ import cash.z.ecc.android.sdk.ext.collectWith
 import io.horizontalsystems.bankwallet.R
 import io.horizontalsystems.bankwallet.entities.CoinValue
 import io.horizontalsystems.bankwallet.entities.ViewState
-import io.horizontalsystems.bankwallet.entities.nft.*
+import io.horizontalsystems.bankwallet.entities.nft.NftAssetMetadata
+import io.horizontalsystems.bankwallet.entities.nft.NftAssetMetadata.SaleType
+import io.horizontalsystems.bankwallet.entities.nft.NftAssetMetadata.Trait
+import io.horizontalsystems.bankwallet.entities.nft.NftCollectionMetadata
+import io.horizontalsystems.bankwallet.entities.nft.NftUid
 import io.horizontalsystems.bankwallet.entities.viewState
 import io.horizontalsystems.bankwallet.ui.compose.TranslatableString
 import io.horizontalsystems.core.helpers.DateHelper
